@@ -1,17 +1,26 @@
 const Upload = ({ setPage }) => {
     return (
-        <div className="container">
-            <div className="card">
-                <h1>Upload Document</h1>
+        <div className="dashboard-layout">
+            <aside className="sidebar">
+                <h3>Legal AI</h3>
+                <p onClick={() => setPage("dashboard")}>🏠 Dashboard</p>
+                <p onClick={() => setPage("chat")}>💬 Legal Chatbot</p>
+            </aside>
 
-                <input type="file" />
-
-                <button>Upload</button>
-
-                <p className="link" onClick={() => setPage("dashboard")}>
-                    Back to Dashboard
+            <main className="dashboard-main center">
+                <h1>Upload Legal Document</h1>
+                <p className="subtitle">
+                    Upload a PDF, DOCX, or TXT file for AI analysis.
                 </p>
-            </div>
+
+                <div className="upload-box">
+                    <div className="upload-icon">☁️</div>
+                    <p>Drag & drop your document here</p>
+                    <span>or</span>
+                    <button>Select File</button>
+                    <small>Supported formats: PDF, DOCX, TXT</small>
+                </div>
+            </main>
         </div>
     );
 };
